@@ -1,9 +1,8 @@
 <template>
   <div class="row">
     <div class="col-lg-7 m-auto">
-      <card :title="$t('reset_password')">
+      <card :title="$t('set_password')">
         <form @submit.prevent="reset" @keydown="form.onKeydown($event)">
-          <alert-success :form="form" :message="status" />
 
           <!-- Email -->
           <!-- <div class="mb-3 row">
@@ -36,7 +35,7 @@
           <div class="mb-3 row">
             <div class="col-md-9 ms-md-auto">
               <v-button :loading="form.busy">
-                {{ $t('reset_password') }}
+                {{ $t('set_password') }}
               </v-button>
             </div>
           </div>
@@ -53,7 +52,7 @@ export default {
   middleware: 'guest',
 
   metaInfo () {
-    return { title: this.$t('reset_password') }
+    return { title: this.$t('set_password') }
   },
 
   data: () => ({
@@ -73,12 +72,12 @@ export default {
 
   methods: {
     async reset () {
-      const { data } = await this.form.post('/api/password/reset')
+      const { data } = await this.form.post('/api/password/set')
 
       // Redirect login.
       this.$router.push({ name: 'login' })
       this.status = data.status
-
+      console.log(this.status);
       this.form.reset()
     }
   }

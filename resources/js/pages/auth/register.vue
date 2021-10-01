@@ -98,7 +98,7 @@ export default {
         // Log in the user.
         // const { data: { token } } = await this.form.post('/api/login')
 
-        // Redirect home.
+        // Redirect login.
         this.$router.push({ name: 'login' })
         
         // Save the token.

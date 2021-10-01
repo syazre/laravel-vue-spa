@@ -42,7 +42,7 @@ class SetPassword extends Notification
     {
         return (new MailMessage)
             ->line('You are receiving this email because you just registered your account.')
-            ->action('Set Password', url(config('app.url').'/password/reset/'.$this->token).'?email='.urlencode($notifiable->email))
+            ->action('Set Password', url(config('app.url').'/password/set/'.$this->token).'?email='.urlencode($notifiable->email))
             ->line('If you did not request a password reset, no further action is required.');
     }
 

@@ -3,6 +3,7 @@
     <div class="col-lg-7 m-auto">
       <card :title="$t('login')">
         <form @submit.prevent="login" @keydown="form.onKeydown($event)">
+          <alert-success :form="form" :message="status" />
           <!-- Email -->
           <div class="mb-3 row">
             <label class="col-md-3 col-form-label text-md-end">{{ $t('email') }}</label>
