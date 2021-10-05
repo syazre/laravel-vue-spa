@@ -99,13 +99,13 @@ export default {
         // const { data: { token } } = await this.form.post('/api/login')
 
         // Redirect login.
-        this.$router.push({ name: 'login' })
+        await this.$router.push({ name: 'login' })
         
         // Save the token.
-        this.$store.dispatch('auth/saveToken', { token })
+        // this.$store.dispatch('auth/saveToken', { token })
 
         // Update the user.
-        await this.$store.dispatch('auth/updateUser', { user: data })
+        // await this.$store.dispatch('auth/updateUser', { user: data })
 
       }
     }
